@@ -1,0 +1,33 @@
+import pprint 
+board= {'TL':' ','TM':' ','TR':' ','ML':' ','MM':' ','MR':' ','BL':' ','BM':' ','BR':' '}
+boardex= {'TL':'TL','TM':'TM','TR':'TR','ML':'ML','MM':'MM','MR':'MR','BL':'BL','BM':'BM','BR':'BR'}
+
+
+def usrmod() :#allows the user to enter either an x or an o onto the board#
+    print( 'Please enter the position you want to modify')
+    casemod = input()
+    print(' X or O ?')
+    board[casemod]=input()
+
+def printboard() :#prints the playable board where the moves happen#
+    print( board['TL']+'|'+board['TM']+'|'+board['TR'])
+    print('-----')
+    print( board['ML']+'|'+board['MM']+'|'+board['MR'])
+    print('-----')
+    print( board['BL']+'|'+board['BM']+'|'+board['BR'])
+    
+def printboardex() : #prints the exemple board that showcases the playable positions#
+    print( boardex['TL']+'|'+ boardex['TM']+'|'+ boardex['TR'])
+    print('--------')
+    print(  boardex['ML']+'|'+ boardex['MM']+'|'+ boardex['MR'])
+    print('--------')
+    print(  boardex['BL']+'|'+ boardex['BM']+'|'+ boardex['BR'])
+
+
+print( 'Get ready to play tic tac toe! The board and the different playable positions are right below. Please refer to those when making an entry.')
+printboardex ()
+
+
+while True :#archaic gameplay loop , couldnt figure out how to detect a win#
+    usrmod()
+    printboard()
