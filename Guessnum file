@@ -1,0 +1,20 @@
+import random #library to create a random number 
+Snum = random.randint(1,10)#secret number is generated through this function
+print ('Hello what is your name ?')
+name= input()
+print ('Well,'+ name + ' lets play a game , I am thinking of a number between 1 and 10. Try to guess what it is! ')
+z =  0 #Trial counter is set to 0 
+try :
+    while z<6 :#gameplay loop while let the user try 6 times 
+        Gnum = input()
+        if int(Gnum)==Snum : 
+            print ( 'Thats right!, it took you '+str(z)+' guesses to figure it out.')
+        elif int(Gnum) < Snum :
+            print ( 'To low :( , guess higher!')
+            z += 1# wrong guess so trial counter is updated 
+        elif int(Gnum) > Snum :
+            print ( 'To high :( , guess lower!')
+            z +=1
+    print('Nope. The number I was thinking of was ' + str(Snum)+ ' rerun the program to try again')
+except :
+    print ( 'You did not enter a number' ) #when user didnt enter an integer
